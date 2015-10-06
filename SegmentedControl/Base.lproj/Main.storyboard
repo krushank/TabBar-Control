@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Igg-gs-yw3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -37,22 +38,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mass in Pounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSt-CZ-0ql">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mass in Pounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSt-CZ-0ql">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mass in Kgs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFC-3a-6G7">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W5T-RK-4Gj">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-wZ-wgh">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
                                 <constraints>
@@ -76,12 +66,12 @@
                                     <action selector="MysegmentControlValueChanged:" destination="wgq-j0-dxT" eventType="valueChanged" id="4ba-1D-gIf"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-Nw-Q70">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-Nw-Q70">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="p5a-yx-xhI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -93,6 +83,9 @@
                                         <include reference="p5a-yx-xhI"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="wgq-j0-dxT" id="SG6-LH-Ze7"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kii-EQ-lQg">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -121,86 +114,104 @@
                                 <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="325" y="215" width="37" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="ClearButtonPressed:" destination="wgq-j0-dxT" eventType="touchUpInside" id="WbC-GG-9tr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdD-IP-n4o">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mass in Kgs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFC-3a-6G7">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NFC-3a-6G7" firstAttribute="top" secondItem="XdD-IP-n4o" secondAttribute="top" id="1zk-MB-90m"/>
+                            <constraint firstItem="NFC-3a-6G7" firstAttribute="firstBaseline" secondItem="XdD-IP-n4o" secondAttribute="baseline" id="4Gj-Tf-TAc"/>
                             <constraint firstItem="kii-EQ-lQg" firstAttribute="leading" secondItem="wz5-7n-jEa" secondAttribute="leadingMargin" id="4jY-qc-huq"/>
-                            <constraint firstItem="W5T-RK-4Gj" firstAttribute="leading" secondItem="uR7-Nw-Q70" secondAttribute="leading" id="6bV-9f-DUG"/>
-                            <constraint firstItem="kii-EQ-lQg" firstAttribute="top" secondItem="NFC-3a-6G7" secondAttribute="bottom" constant="18" id="9ev-PV-0es"/>
                             <constraint firstItem="uR7-Nw-Q70" firstAttribute="trailing" secondItem="wz5-7n-jEa" secondAttribute="trailingMargin" id="9jE-Wi-2ui"/>
-                            <constraint firstItem="uR7-Nw-Q70" firstAttribute="leading" secondItem="FSt-CZ-0ql" secondAttribute="trailing" constant="62" id="AMp-vZ-v7T"/>
-                            <constraint firstItem="W5T-RK-4Gj" firstAttribute="bottom" secondItem="NFC-3a-6G7" secondAttribute="bottom" id="Fah-iv-67T"/>
-                            <constraint firstItem="NFC-3a-6G7" firstAttribute="leading" secondItem="FSt-CZ-0ql" secondAttribute="leading" id="Y9d-o4-A2E"/>
+                            <constraint firstItem="XdD-IP-n4o" firstAttribute="leading" secondItem="uR7-Nw-Q70" secondAttribute="leading" id="Auj-47-Cco"/>
+                            <constraint firstItem="NFC-3a-6G7" firstAttribute="trailing" secondItem="FSt-CZ-0ql" secondAttribute="trailing" id="Bt3-Td-QCU"/>
+                            <constraint firstItem="uR7-Nw-Q70" firstAttribute="leading" secondItem="FSt-CZ-0ql" secondAttribute="trailing" constant="44" id="FEt-LR-3nW"/>
+                            <constraint firstItem="NFC-3a-6G7" firstAttribute="leading" secondItem="kii-EQ-lQg" secondAttribute="leading" id="M6X-GH-vhk"/>
+                            <constraint firstItem="kii-EQ-lQg" firstAttribute="top" secondItem="NFC-3a-6G7" secondAttribute="bottom" constant="18" id="RbV-1G-RSE"/>
+                            <constraint firstItem="FSt-CZ-0ql" firstAttribute="top" secondItem="IGa-wZ-wgh" secondAttribute="bottom" constant="49" id="VVc-oF-krp"/>
+                            <constraint firstItem="FSt-CZ-0ql" firstAttribute="leading" secondItem="kii-EQ-lQg" secondAttribute="leading" id="YHR-DN-7ey"/>
                             <constraint firstItem="IGa-wZ-wgh" firstAttribute="top" secondItem="RQD-DA-kaK" secondAttribute="bottom" constant="20" id="bYx-4x-CqC"/>
-                            <constraint firstItem="NFC-3a-6G7" firstAttribute="top" secondItem="FSt-CZ-0ql" secondAttribute="bottom" constant="38" id="bqs-nw-rDh"/>
-                            <constraint firstItem="W5T-RK-4Gj" firstAttribute="leading" secondItem="NFC-3a-6G7" secondAttribute="trailing" constant="87" id="hdT-4Y-NNF"/>
-                            <constraint firstItem="FSt-CZ-0ql" firstAttribute="leading" secondItem="wz5-7n-jEa" secondAttribute="leadingMargin" constant="25" id="k78-rY-RE7"/>
-                            <constraint firstItem="W5T-RK-4Gj" firstAttribute="trailing" secondItem="uR7-Nw-Q70" secondAttribute="trailing" id="ncN-m1-bvl"/>
-                            <constraint firstItem="FSt-CZ-0ql" firstAttribute="top" secondItem="IGa-wZ-wgh" secondAttribute="bottom" constant="49" id="qSJ-LM-tz8"/>
+                            <constraint firstItem="XdD-IP-n4o" firstAttribute="trailing" secondItem="uR7-Nw-Q70" secondAttribute="trailing" id="d3X-nk-myF"/>
+                            <constraint firstItem="NFC-3a-6G7" firstAttribute="top" secondItem="FSt-CZ-0ql" secondAttribute="bottom" constant="38" id="nTu-1I-qoo"/>
+                            <constraint firstItem="tBy-84-K7G" firstAttribute="baseline" secondItem="kii-EQ-lQg" secondAttribute="baseline" id="rCl-C6-5ZX"/>
                             <constraint firstItem="IGa-wZ-wgh" firstAttribute="centerX" secondItem="wz5-7n-jEa" secondAttribute="centerX" id="u4E-2T-pkZ"/>
                             <constraint firstItem="uR7-Nw-Q70" firstAttribute="top" secondItem="IGa-wZ-wgh" secondAttribute="bottom" constant="45" id="xkN-4k-Z25"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tBy-84-K7G" secondAttribute="trailing" constant="22" id="zza-VY-36R"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="FSt-CZ-0ql"/>
-                                <exclude reference="NFC-3a-6G7"/>
-                                <exclude reference="W5T-RK-4Gj"/>
                                 <exclude reference="IGa-wZ-wgh"/>
                                 <exclude reference="uR7-Nw-Q70"/>
                                 <exclude reference="kii-EQ-lQg"/>
                                 <exclude reference="tBy-84-K7G"/>
+                                <exclude reference="XdD-IP-n4o"/>
+                                <exclude reference="NFC-3a-6G7"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="k78-rY-RE7"/>
-                                <exclude reference="qSJ-LM-tz8"/>
+                                <exclude reference="VVc-oF-krp"/>
+                                <exclude reference="YHR-DN-7ey"/>
+                                <exclude reference="1zk-MB-90m"/>
+                                <exclude reference="4Gj-Tf-TAc"/>
+                                <exclude reference="Bt3-Td-QCU"/>
+                                <exclude reference="M6X-GH-vhk"/>
+                                <exclude reference="nTu-1I-qoo"/>
+                                <exclude reference="Auj-47-Cco"/>
+                                <exclude reference="d3X-nk-myF"/>
+                                <exclude reference="9jE-Wi-2ui"/>
+                                <exclude reference="FEt-LR-3nW"/>
+                                <exclude reference="xkN-4k-Z25"/>
+                                <exclude reference="4jY-qc-huq"/>
+                                <exclude reference="RbV-1G-RSE"/>
+                                <exclude reference="rCl-C6-5ZX"/>
+                                <exclude reference="zza-VY-36R"/>
                                 <exclude reference="bYx-4x-CqC"/>
                                 <exclude reference="u4E-2T-pkZ"/>
-                                <exclude reference="Y9d-o4-A2E"/>
-                                <exclude reference="bqs-nw-rDh"/>
-                                <exclude reference="4jY-qc-huq"/>
-                                <exclude reference="9ev-PV-0es"/>
-                                <exclude reference="9jE-Wi-2ui"/>
-                                <exclude reference="AMp-vZ-v7T"/>
-                                <exclude reference="xkN-4k-Z25"/>
-                                <exclude reference="6bV-9f-DUG"/>
-                                <exclude reference="Fah-iv-67T"/>
-                                <exclude reference="hdT-4Y-NNF"/>
-                                <exclude reference="ncN-m1-bvl"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="FSt-CZ-0ql"/>
-                                <include reference="NFC-3a-6G7"/>
-                                <include reference="W5T-RK-4Gj"/>
                                 <include reference="IGa-wZ-wgh"/>
                                 <include reference="uR7-Nw-Q70"/>
                                 <include reference="kii-EQ-lQg"/>
                                 <include reference="tBy-84-K7G"/>
+                                <include reference="XdD-IP-n4o"/>
+                                <include reference="NFC-3a-6G7"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="k78-rY-RE7"/>
-                                <include reference="qSJ-LM-tz8"/>
+                                <include reference="VVc-oF-krp"/>
+                                <include reference="YHR-DN-7ey"/>
+                                <include reference="1zk-MB-90m"/>
+                                <include reference="4Gj-Tf-TAc"/>
+                                <include reference="Bt3-Td-QCU"/>
+                                <include reference="M6X-GH-vhk"/>
+                                <include reference="nTu-1I-qoo"/>
+                                <include reference="Auj-47-Cco"/>
+                                <include reference="d3X-nk-myF"/>
+                                <include reference="9jE-Wi-2ui"/>
+                                <include reference="FEt-LR-3nW"/>
+                                <include reference="xkN-4k-Z25"/>
+                                <include reference="4jY-qc-huq"/>
+                                <include reference="RbV-1G-RSE"/>
+                                <include reference="rCl-C6-5ZX"/>
+                                <include reference="zza-VY-36R"/>
                                 <include reference="bYx-4x-CqC"/>
                                 <include reference="u4E-2T-pkZ"/>
-                                <include reference="Y9d-o4-A2E"/>
-                                <include reference="bqs-nw-rDh"/>
-                                <include reference="4jY-qc-huq"/>
-                                <include reference="9ev-PV-0es"/>
-                                <include reference="9jE-Wi-2ui"/>
-                                <include reference="AMp-vZ-v7T"/>
-                                <include reference="xkN-4k-Z25"/>
-                                <include reference="6bV-9f-DUG"/>
-                                <include reference="Fah-iv-67T"/>
-                                <include reference="hdT-4Y-NNF"/>
-                                <include reference="ncN-m1-bvl"/>
                             </mask>
                         </variation>
                     </view>
@@ -208,9 +219,11 @@
                     <connections>
                         <outlet property="ClearButton" destination="tBy-84-K7G" id="5Gv-HY-5Sj"/>
                         <outlet property="ConvertButton" destination="kii-EQ-lQg" id="LRx-hL-cSP"/>
+                        <outlet property="Label1" destination="FSt-CZ-0ql" id="dLs-A5-gRp"/>
+                        <outlet property="Label2" destination="NFC-3a-6G7" id="TfR-7q-Qc3"/>
                         <outlet property="MysegmentControl" destination="IGa-wZ-wgh" id="Wgx-3O-xnm"/>
+                        <outlet property="ResultLabel" destination="XdD-IP-n4o" id="2bW-IX-Fnb"/>
                         <outlet property="TextLabel1" destination="uR7-Nw-Q70" id="yyq-nw-qat"/>
-                        <outlet property="TextLabel2" destination="W5T-RK-4Gj" id="03q-OB-KjB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9z6-vd-kRp" userLabel="First Responder" sceneMemberID="firstResponder"/>

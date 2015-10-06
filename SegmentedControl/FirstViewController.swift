@@ -8,19 +8,29 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var MysegmentControl: UISegmentedControl!
    
    
+    
     @IBOutlet var TextLabel1: UITextField!
     
-    @IBOutlet var TextLabel2: UITextField!
+   
+    
+    @IBOutlet var Label1: UILabel!
     
     //var  TextLabel2 = 0.0
     @IBOutlet var ClearButton: UIButton!
     
+    @IBOutlet var Label2: UILabel!
+   
+    
+    @IBOutlet var ResultLabel: UILabel!
+   
+    
     @IBOutlet var ConvertButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,6 +44,30 @@ class FirstViewController: UIViewController {
     @IBAction func MysegmentControlValueChanged(sender: AnyObject) {
         
         
+        if MysegmentControl.selectedSegmentIndex == 0
+        {
+            Label1.text = "Mass in Pounds"
+            Label2.text = "Mass in Kilograms"
+            
+            
+          
+            ResultLabel.text = "0"
+            
+            
+        }
+        
+        if MysegmentControl.selectedSegmentIndex == 1
+        {
+            Label1.text = "Mass in Kilograms"
+            Label2.text = "Mass in Pounds"
+            
+          
+           
+            ResultLabel.text = "0"
+            
+            
+        }
+        
         
         
         
@@ -41,20 +75,70 @@ class FirstViewController: UIViewController {
    
     @IBAction func ConvertButtonPressed(sender: UIButton) {
         
+        var numberFormatter = NSNumberFormatter()
+        numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        
+        if let number = numberFormatter.numberFromString(TextLabel1.text) {
+            
+            numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+            
+            if let AmountString = numberFormatter.stringFromNumber(number) {
+                //outputLabel.text = "You entered \(AmountString)"
+            }
+        }
+        
+        else
+        
+        {
+            let alert = UIAlertView(title: "Error", message: "Please enter a number! ", delegate: nil, cancelButtonTitle: "OK")
+            
+            alert.show()
+            
+            TextLabel1.text = ""
+
+        }
+
+        
+        if MysegmentControl.selectedSegmentIndex == 0
+        {
+   
         var strDouble = (TextLabel1.text as NSString).doubleValue
         var double1 = strDouble / 2.20
-       // var stringFromDouble:String = String(format:"%f", 1.00)
-        TextLabel2.text = toString(double1)
+        var strFromDouble:String = String(format:"%f", 1.00)
+        ResultLabel.text = toString(double1)
+                
+        }
+        
+        else if MysegmentControl.selectedSegmentIndex == 1
+        {
+            
+            var strDouble = (TextLabel1.text as NSString).doubleValue
+            var double1 = strDouble * 2.20
+            var stringFromDouble:String = String(format:"%f", 1.00)
+            ResultLabel.text = toString(double1)
+            
+            
+        }
         
     }
     
-    @IBAction func ClearButtonPressed(sender: UIButton) {
-        TextLabel1.text = "0"
-        TextLabel2.text = "0"
+     func ClearButtonPressed(sender: UIButton)
+    {
+        
+        TextLabel1.text = ""
+        ResultLabel.text = "0"
         
     }
     
    
+    
+    //
+    // MARK: UITextFieldDelegate
+    //
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     
 }
