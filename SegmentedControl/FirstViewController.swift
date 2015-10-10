@@ -12,7 +12,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var MysegmentControl: UISegmentedControl!
    
-   
+
     
     @IBOutlet var TextLabel1: UITextField!
     
@@ -56,7 +56,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        if MysegmentControl.selectedSegmentIndex == 1
+        else if MysegmentControl.selectedSegmentIndex == 1
         {
             Label1.text = "Mass in Kilograms"
             Label2.text = "Mass in Pounds"
@@ -109,7 +109,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
                 
         }
         
-        else if MysegmentControl.selectedSegmentIndex == 1
+        if MysegmentControl.selectedSegmentIndex == 1
         {
             
             var strDouble = (TextLabel1.text as NSString).doubleValue

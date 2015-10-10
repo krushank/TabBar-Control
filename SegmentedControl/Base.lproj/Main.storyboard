@@ -10,7 +10,7 @@
         <!--Temperature-->
         <scene sceneID="iPI-mh-S3E">
             <objects>
-                <viewController id="sYb-hx-Y1B" userLabel="Temperature" sceneMemberID="viewController">
+                <viewController id="sYb-hx-Y1B" userLabel="Temperature" customClass="SecondViewController" customModule="SegmentedControl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SyO-OW-mbj"/>
                         <viewControllerLayoutGuide type="bottom" id="P2X-GQ-ueB"/>
@@ -18,13 +18,61 @@
                     <view key="view" contentMode="scaleToFill" id="Tuu-fg-2Bl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IFD-FV-3D6">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="'F -&gt; 'C"/>
+                                    <segment title="'C -&gt; 'F"/>
+                                </segments>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="140" y="28" width="121" height="29"/>
+                                </variation>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJk-lF-tbA">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="135" y="298" width="130" height="21"/>
+                                </variation>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1M-Ag-dw1">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="101" width="400" height="162"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="sYb-hx-Y1B" id="6YM-Et-TPD"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="IFD-FV-3D6"/>
+                                <exclude reference="BJk-lF-tbA"/>
+                                <exclude reference="O1M-Ag-dw1"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="IFD-FV-3D6"/>
+                                <include reference="BJk-lF-tbA"/>
+                                <include reference="O1M-Ag-dw1"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="wdy-yd-zbU" userLabel="Temperature"/>
+                    <connections>
+                        <outlet property="ResultLabel" destination="BJk-lF-tbA" id="mYb-ee-zOy"/>
+                        <outlet property="pickerView" destination="O1M-Ag-dw1" id="VJy-Qx-26H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aR5-ao-9T1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579" y="458"/>
+            <point key="canvasLocation" x="645" y="476"/>
         </scene>
         <!--FirstViewController-->
         <scene sceneID="LJn-Wt-Sjc">
@@ -66,27 +114,6 @@
                                     <action selector="MysegmentControlValueChanged:" destination="wgq-j0-dxT" eventType="valueChanged" id="4ba-1D-gIf"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-Nw-Q70">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="p5a-yx-xhI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="p5a-yx-xhI"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="p5a-yx-xhI"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="wgq-j0-dxT" id="SG6-LH-Ze7"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kii-EQ-lQg">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -130,6 +157,27 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-Nw-Q70">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="p5a-yx-xhI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="p5a-yx-xhI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="p5a-yx-xhI"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="wgq-j0-dxT" id="SG6-LH-Ze7"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -156,11 +204,11 @@
                             <mask key="subviews">
                                 <exclude reference="FSt-CZ-0ql"/>
                                 <exclude reference="IGa-wZ-wgh"/>
-                                <exclude reference="uR7-Nw-Q70"/>
                                 <exclude reference="kii-EQ-lQg"/>
                                 <exclude reference="tBy-84-K7G"/>
                                 <exclude reference="XdD-IP-n4o"/>
                                 <exclude reference="NFC-3a-6G7"/>
+                                <exclude reference="uR7-Nw-Q70"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="VVc-oF-krp"/>
@@ -187,11 +235,11 @@
                             <mask key="subviews">
                                 <include reference="FSt-CZ-0ql"/>
                                 <include reference="IGa-wZ-wgh"/>
-                                <include reference="uR7-Nw-Q70"/>
                                 <include reference="kii-EQ-lQg"/>
                                 <include reference="tBy-84-K7G"/>
                                 <include reference="XdD-IP-n4o"/>
                                 <include reference="NFC-3a-6G7"/>
+                                <include reference="uR7-Nw-Q70"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="VVc-oF-krp"/>
