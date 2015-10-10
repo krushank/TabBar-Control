@@ -67,6 +67,7 @@
                     <tabBarItem key="tabBarItem" title="Item 2" id="wdy-yd-zbU" userLabel="Temperature"/>
                     <connections>
                         <outlet property="ResultLabel" destination="BJk-lF-tbA" id="mYb-ee-zOy"/>
+                        <outlet property="mySegmentControlTemp" destination="IFD-FV-3D6" id="Eyp-bg-KBf"/>
                         <outlet property="pickerView" destination="O1M-Ag-dw1" id="VJy-Qx-26H"/>
                     </connections>
                 </viewController>

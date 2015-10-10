@@ -13,8 +13,9 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
    
     @IBOutlet var pickerView: UIPickerView!
     
-    @IBOutlet var MySegmentControlTemp: UISegmentedControl!
+   
     
+    @IBOutlet weak var mySegmentControlTemp: UISegmentedControl!
     @IBOutlet var ResultLabel: UILabel!
 
     var Array = ["0","32"]
@@ -36,11 +37,16 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 }
 
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return Array[row]
+        
+                return Array[row]
+        
+        
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Array.count
+       
+            return Array.count 
+        
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -50,25 +56,25 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         
-        
-        //if MySegmentControlTemp.selectedSegmentIndex == 0
-        //{
+        if mySegmentControlTemp.selectedSegmentIndex == 0
+        {
             var itemSelected = Array[row]
             var strDouble = (itemSelected as NSString).doubleValue
         var double1 = (strDouble * 1.8) + 32.0
          var stringFromDouble:String = String(format:"%f", 1.00)
         ResultLabel.text = toString(double1)
-       // }
+        }
         
-//       else
-//        {
-//            var itemSelected = ArrayCtoF[row]
-//            var strDouble = (itemSelected as NSString).doubleValue
-//            var double1 = (strDouble - 32) / 1.8
-//            var stringFromDouble:String = String(format:"%f", 1.00)
-//            ResultLabel.text = toString(double1)
-//            
-//        }
+        else
+        {
+        
+      
+            var itemSelected = ArrayCtoF[row]
+            var strDouble = (itemSelected as NSString).doubleValue
+            var double1 = (strDouble - 32) / 1.8
+            var stringFromDouble:String = String(format:"%f", 1.00)
+            ResultLabel.text = toString(double1)
+        }
         
     }
     
