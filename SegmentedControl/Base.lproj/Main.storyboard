@@ -16,6 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="p9g-RC-yA1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Vv-lO-LJl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ks6-S3-ro7">
@@ -130,9 +131,12 @@
                                 <exclude reference="fpG-i2-LuZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9Mu-W3-qhe"/>
-                                <exclude reference="fH6-eZ-Vdx"/>
-                                <exclude reference="v47-xK-wAG"/>
+                                <exclude reference="AZW-ni-Ly4"/>
+                                <exclude reference="VCT-Pc-yJt"/>
+                                <exclude reference="ZNg-Bg-dfX"/>
+                                <exclude reference="7Cf-eL-C2j"/>
+                                <exclude reference="WPo-aj-QKA"/>
+                                <exclude reference="rUX-Wl-p3i"/>
                                 <exclude reference="xPz-cL-tld"/>
                                 <exclude reference="zOI-FX-vlJ"/>
                                 <exclude reference="6id-F5-WO8"/>
@@ -140,14 +144,11 @@
                                 <exclude reference="0Br-y0-9O6"/>
                                 <exclude reference="XD7-X9-Ux1"/>
                                 <exclude reference="zL8-Fw-ucv"/>
-                                <exclude reference="AZW-ni-Ly4"/>
-                                <exclude reference="VCT-Pc-yJt"/>
-                                <exclude reference="ZNg-Bg-dfX"/>
-                                <exclude reference="7Cf-eL-C2j"/>
-                                <exclude reference="WPo-aj-QKA"/>
-                                <exclude reference="rUX-Wl-p3i"/>
                                 <exclude reference="30g-Rx-rJG"/>
                                 <exclude reference="gOR-kJ-GYF"/>
+                                <exclude reference="9Mu-W3-qhe"/>
+                                <exclude reference="fH6-eZ-Vdx"/>
+                                <exclude reference="v47-xK-wAG"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -161,9 +162,12 @@
                                 <include reference="fpG-i2-LuZ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9Mu-W3-qhe"/>
-                                <include reference="fH6-eZ-Vdx"/>
-                                <include reference="v47-xK-wAG"/>
+                                <include reference="AZW-ni-Ly4"/>
+                                <include reference="VCT-Pc-yJt"/>
+                                <include reference="ZNg-Bg-dfX"/>
+                                <include reference="7Cf-eL-C2j"/>
+                                <include reference="WPo-aj-QKA"/>
+                                <include reference="rUX-Wl-p3i"/>
                                 <include reference="xPz-cL-tld"/>
                                 <include reference="zOI-FX-vlJ"/>
                                 <include reference="6id-F5-WO8"/>
@@ -171,14 +175,11 @@
                                 <include reference="0Br-y0-9O6"/>
                                 <include reference="XD7-X9-Ux1"/>
                                 <include reference="zL8-Fw-ucv"/>
-                                <include reference="AZW-ni-Ly4"/>
-                                <include reference="VCT-Pc-yJt"/>
-                                <include reference="ZNg-Bg-dfX"/>
-                                <include reference="7Cf-eL-C2j"/>
-                                <include reference="WPo-aj-QKA"/>
-                                <include reference="rUX-Wl-p3i"/>
                                 <include reference="30g-Rx-rJG"/>
                                 <include reference="gOR-kJ-GYF"/>
+                                <include reference="9Mu-W3-qhe"/>
+                                <include reference="fH6-eZ-Vdx"/>
+                                <include reference="v47-xK-wAG"/>
                             </mask>
                         </variation>
                     </view>
