@@ -213,22 +213,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJk-lF-tbA">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="135" y="298" width="130" height="21"/>
                                 </variation>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1M-Ag-dw1">
-                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="101" width="400" height="162"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="sYb-hx-Y1B" id="6YM-Et-TPD"/>
-                                    <outlet property="delegate" destination="Tuu-fg-2Bl" id="EhP-B7-Dfs"/>
-                                </connections>
-                            </pickerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IFD-FV-3D6">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
                                 <segments>
@@ -242,20 +232,30 @@
                                     <action selector="segmentValueChanged:" destination="sYb-hx-Y1B" eventType="valueChanged" id="jFL-87-4py"/>
                                 </connections>
                             </segmentedControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1M-Ag-dw1">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="100" width="400" height="162"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="sYb-hx-Y1B" id="6YM-Et-TPD"/>
+                                    <outlet property="delegate" destination="Tuu-fg-2Bl" id="EhP-B7-Dfs"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="BJk-lF-tbA"/>
-                                <exclude reference="O1M-Ag-dw1"/>
                                 <exclude reference="IFD-FV-3D6"/>
+                                <exclude reference="O1M-Ag-dw1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="BJk-lF-tbA"/>
-                                <include reference="O1M-Ag-dw1"/>
                                 <include reference="IFD-FV-3D6"/>
+                                <include reference="O1M-Ag-dw1"/>
                             </mask>
                         </variation>
                     </view>
