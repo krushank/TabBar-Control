@@ -232,14 +232,14 @@
                                     <action selector="segmentValueChanged:" destination="sYb-hx-Y1B" eventType="valueChanged" id="jFL-87-4py"/>
                                 </connections>
                             </segmentedControl>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1M-Ag-dw1">
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1M-Ag-dw1">
                                 <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="100" width="400" height="162"/>
                                 </variation>
                                 <connections>
-                                    <outlet property="dataSource" destination="sYb-hx-Y1B" id="6YM-Et-TPD"/>
-                                    <outlet property="delegate" destination="Tuu-fg-2Bl" id="EhP-B7-Dfs"/>
+                                    <outlet property="dataSource" destination="sYb-hx-Y1B" id="BUs-2L-eck"/>
+                                    <outlet property="delegate" destination="sYb-hx-Y1B" id="cPd-Fg-FBE"/>
                                 </connections>
                             </pickerView>
                         </subviews>
@@ -248,14 +248,12 @@
                             <mask key="subviews">
                                 <exclude reference="BJk-lF-tbA"/>
                                 <exclude reference="IFD-FV-3D6"/>
-                                <exclude reference="O1M-Ag-dw1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="BJk-lF-tbA"/>
                                 <include reference="IFD-FV-3D6"/>
-                                <include reference="O1M-Ag-dw1"/>
                             </mask>
                         </variation>
                     </view>
@@ -263,7 +261,6 @@
                     <connections>
                         <outlet property="ResultLabel" destination="BJk-lF-tbA" id="mYb-ee-zOy"/>
                         <outlet property="mySegmentControlTemp" destination="IFD-FV-3D6" id="Eyp-bg-KBf"/>
-                        <outlet property="pickerTemp" destination="O1M-Ag-dw1" id="ZoD-Vp-bDg"/>
                         <outlet property="pickerView" destination="O1M-Ag-dw1" id="VJy-Qx-26H"/>
                     </connections>
                 </viewController>

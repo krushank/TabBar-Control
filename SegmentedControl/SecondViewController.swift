@@ -9,6 +9,7 @@
 import UIKit
 
 
+
 class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
    
     @IBOutlet var pickerView: UIPickerView!
@@ -18,12 +19,11 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var mySegmentControlTemp: UISegmentedControl!
     @IBOutlet var ResultLabel: UILabel!
 
-    @IBOutlet weak var pickerTemp: UIPickerView!
     
    //let Array = [0,1,2,3,4]
    
     
- var Array = (-129...134).map { $0 }
+ let  Array = (-129...134).map { $0 }
 
   
     
@@ -31,7 +31,7 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
   
     
     
-     var ArrayCtoF = (-90...57).map { $0 }
+     let ArrayCtoF = (-90...57).map { $0 }
     
     
     
@@ -44,8 +44,6 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        //pickerTemp.delegate = self
-        //pickerTemp.dataSource = self
     }
     
   
@@ -65,7 +63,7 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     {
         ResultLabel.text = "0"
         pickerView.reloadAllComponents()
-        pickerView.hidden = false
+       // pickerView.hidden = false
         //pickerTemp.hidden = true
         //pickerView.reloadAllComponents()
     }
@@ -82,18 +80,27 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     }
     
-    //func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-//        
-//        if mySegmentControlTemp.selectedSegmentIndex == 0
-//        {
-//            return Array[row]}
-//     else
-//        
-//        { return ArrayCtoF[row] }
+      func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
+        
+        if mySegmentControlTemp.selectedSegmentIndex == 0
+        {
+            var item = Array[row]
+            var string = (item as NSInteger)
+            var number = (toString(string))
+            return number
+        
+        }
+     else
+        
+        {   var item = ArrayCtoF[row]
+            var string = (item as NSInteger)
+            var number = (toString(string))
+            return number
+        }
      
         
         
-   //}
+   }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
        
@@ -114,11 +121,11 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         if mySegmentControlTemp.selectedSegmentIndex == 0
         {
-            pickerView.reloadAllComponents()
+           pickerView.reloadAllComponents()
             var itemSelected = Array[row]
-            //var strDouble = (itemSelected as NSString).doubleValue
-        var double1 = (itemSelected * 1)
-            //strDouble = itemSelected *
+            var strDouble = (Double)(itemSelected as NSInteger)
+        var double1 = (strDouble - 32) / 1.8
+        
          var stringFromDouble:String = String(format:"%f", 1.00)
        // ResultLabel.text = toString(double1)
             ResultLabel.text = toString(double1)
@@ -128,12 +135,12 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         {
             
             pickerView.reloadAllComponents()
-            
             var itemSelected = ArrayCtoF[row]
-            //var strDouble = (itemSelected as NSString).doubleValue
-            var double1 = itemSelected
-            //var double1 = (strDouble - 32) / 1
+            var strDouble = (Double)(itemSelected as NSInteger)
+            var double1 = (strDouble * 1.8) + 32
+            //strDouble = itemSelected *
             var stringFromDouble:String = String(format:"%f", 1.00)
+            // ResultLabel.text = toString(double1)
             ResultLabel.text = toString(double1)
         }
         

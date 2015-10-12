@@ -16,6 +16,7 @@
 		E36B795D1BC2D739009CA0EA /* SegmentedControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B795C1BC2D739009CA0EA /* SegmentedControlTests.swift */; };
 		E37749861BC2E04500E5C113 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37749851BC2E04500E5C113 /* FirstViewController.swift */; };
 		E37749881BC2E05600E5C113 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37749871BC2E05600E5C113 /* SecondViewController.swift */; };
+		E3E3682C1BCC4E79004ECDB6 /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E3682B1BCC4E79004ECDB6 /* StringEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		E36B795C1BC2D739009CA0EA /* SegmentedControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlTests.swift; sourceTree = "<group>"; };
 		E37749851BC2E04500E5C113 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		E37749871BC2E05600E5C113 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E3E3682B1BCC4E79004ECDB6 /* StringEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringEx.swift; path = ../StringEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				E36B79461BC2D739009CA0EA /* AppDelegate.swift */,
 				E36B79481BC2D739009CA0EA /* ViewController.swift */,
 				E36B794A1BC2D739009CA0EA /* Main.storyboard */,
+				E3E3682B1BCC4E79004ECDB6 /* StringEx.swift */,
 				E35993881BCAFAB900C6F13F /* DistanceConverter.swift */,
 				E37749851BC2E04500E5C113 /* FirstViewController.swift */,
 				E37749871BC2E05600E5C113 /* SecondViewController.swift */,
@@ -224,6 +227,7 @@
 				E36B79491BC2D739009CA0EA /* ViewController.swift in Sources */,
 				E35993891BCAFAB900C6F13F /* DistanceConverter.swift in Sources */,
 				E36B79471BC2D739009CA0EA /* AppDelegate.swift in Sources */,
+				E3E3682C1BCC4E79004ECDB6 /* StringEx.swift in Sources */,
 				E37749861BC2E04500E5C113 /* FirstViewController.swift in Sources */,
 				E37749881BC2E05600E5C113 /* SecondViewController.swift in Sources */,
 			);
