@@ -10,66 +10,66 @@ import UIKit
 
 
 
-class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
-   
+class TempController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+    
     @IBOutlet var pickerView: UIPickerView!
-
+    
     @IBOutlet weak var mySegmentControlTemp: UISegmentedControl!
     
     @IBOutlet var ResultLabel: UILabel!
-
-   
     
-     let  Array = (-129...134).map { $0 }
-
-     let ArrayCtoF = (-90...57).map { $0 }
+    
+    
+    let  Array = (-129...134).map { $0 }
+    
+    let ArrayCtoF = (-90...57).map { $0 }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        
         pickerView.delegate = self
         pickerView.dataSource = self
         
     }
     
-  
-  
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-}
-
-  
+    }
     
- 
+    
+    
+    
     @IBAction func segmentValueChanged(sender: AnyObject) {
-    
-    if mySegmentControlTemp.selectedSegmentIndex == 0
-    {
-        ResultLabel.text = "0"
-        pickerView.reloadAllComponents()
-       // pickerView.hidden = false
-        //pickerTemp.hidden = true
-        //pickerView.reloadAllComponents()
+        
+        if mySegmentControlTemp.selectedSegmentIndex == 0
+        {
+            ResultLabel.text = "0"
+            pickerView.reloadAllComponents()
+            // pickerView.hidden = false
+            //pickerTemp.hidden = true
+            //pickerView.reloadAllComponents()
+        }
+            
+        else
+        {
+            ResultLabel.text = "0"
+            pickerView.reloadAllComponents()
+            //pickerView.hidden = true
+            //pickerTemp.hidden = false
+            
+        }
+        
+        
     }
     
-    else
-    {
-        ResultLabel.text = "0"
-        pickerView.reloadAllComponents()
-        //pickerView.hidden = true
-        //pickerTemp.hidden = false
-    
-    }
-    
-    
-    }
-    
-      func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
         
         if mySegmentControlTemp.selectedSegmentIndex == 0
         {
@@ -77,27 +77,27 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             var string = (item as NSInteger)
             var number = (toString(string))
             return number
-        
+            
         }
-     else
-        
+        else
+            
         {   var item = ArrayCtoF[row]
             var string = (item as NSInteger)
             var number = (toString(string))
             return number
         }
-     
         
         
-   }
+        
+    }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       
-            if mySegmentControlTemp.selectedSegmentIndex == 0
-            {
-                return Array.count}
-       else
-           { return ArrayCtoF.count }
+        
+        if mySegmentControlTemp.selectedSegmentIndex == 0
+        {
+            return Array.count}
+        else
+        { return ArrayCtoF.count }
         
     }
     
@@ -110,16 +110,16 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         if mySegmentControlTemp.selectedSegmentIndex == 0
         {
-           pickerView.reloadAllComponents()
+            pickerView.reloadAllComponents()
             var itemSelected = Array[row]
             var strDouble = (Double)(itemSelected as NSInteger)
-        var double1 = (strDouble - 32) / 1.8
-        
-         var stringFromDouble:String = String(format:"%f", 1.00)
-       // ResultLabel.text = toString(double1)
+            var double1 = (strDouble - 32) / 1.8
+            
+            var stringFromDouble:String = String(format:"%f", 1.00)
+            // ResultLabel.text = toString(double1)
             ResultLabel.text = toString(double1)
         }
-        
+            
         else
         {
             
@@ -138,7 +138,7 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 }
 
 
-    
 
-    
+
+
 

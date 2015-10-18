@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E35993891BCAFAB900C6F13F /* DistanceConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35993881BCAFAB900C6F13F /* DistanceConverter.swift */; };
 		E36B79471BC2D739009CA0EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B79461BC2D739009CA0EA /* AppDelegate.swift */; };
 		E36B79491BC2D739009CA0EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B79481BC2D739009CA0EA /* ViewController.swift */; };
 		E36B794C1BC2D739009CA0EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36B794A1BC2D739009CA0EA /* Main.storyboard */; };
 		E36B794E1BC2D739009CA0EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36B794D1BC2D739009CA0EA /* Images.xcassets */; };
 		E36B79511BC2D739009CA0EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E36B794F1BC2D739009CA0EA /* LaunchScreen.xib */; };
 		E36B795D1BC2D739009CA0EA /* SegmentedControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B795C1BC2D739009CA0EA /* SegmentedControlTests.swift */; };
-		E37749861BC2E04500E5C113 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37749851BC2E04500E5C113 /* FirstViewController.swift */; };
-		E37749881BC2E05600E5C113 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37749871BC2E05600E5C113 /* SecondViewController.swift */; };
+		E3770F001BD448B700998A25 /* DistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3770EFF1BD448B700998A25 /* DistanceController.swift */; };
+		E3770F021BD4490800998A25 /* MassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3770F011BD4490800998A25 /* MassController.swift */; };
+		E3770F041BD4493300998A25 /* TempController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3770F031BD4493300998A25 /* TempController.swift */; };
 		E3E3682C1BCC4E79004ECDB6 /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E3682B1BCC4E79004ECDB6 /* StringEx.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E35993881BCAFAB900C6F13F /* DistanceConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceConverter.swift; sourceTree = "<group>"; };
 		E36B79411BC2D739009CA0EA /* SegmentedControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SegmentedControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36B79451BC2D739009CA0EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E36B79461BC2D739009CA0EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,8 +40,9 @@
 		E36B79561BC2D739009CA0EA /* SegmentedControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SegmentedControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36B795B1BC2D739009CA0EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E36B795C1BC2D739009CA0EA /* SegmentedControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlTests.swift; sourceTree = "<group>"; };
-		E37749851BC2E04500E5C113 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		E37749871BC2E05600E5C113 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E3770EFF1BD448B700998A25 /* DistanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceController.swift; sourceTree = "<group>"; };
+		E3770F011BD4490800998A25 /* MassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassController.swift; sourceTree = "<group>"; };
+		E3770F031BD4493300998A25 /* TempController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TempController.swift; path = ../TempController.swift; sourceTree = "<group>"; };
 		E3E3682B1BCC4E79004ECDB6 /* StringEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringEx.swift; path = ../StringEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,9 +89,9 @@
 				E36B79481BC2D739009CA0EA /* ViewController.swift */,
 				E36B794A1BC2D739009CA0EA /* Main.storyboard */,
 				E3E3682B1BCC4E79004ECDB6 /* StringEx.swift */,
-				E35993881BCAFAB900C6F13F /* DistanceConverter.swift */,
-				E37749851BC2E04500E5C113 /* FirstViewController.swift */,
-				E37749871BC2E05600E5C113 /* SecondViewController.swift */,
+				E3770EFF1BD448B700998A25 /* DistanceController.swift */,
+				E3770F011BD4490800998A25 /* MassController.swift */,
+				E3770F031BD4493300998A25 /* TempController.swift */,
 				E36B794D1BC2D739009CA0EA /* Images.xcassets */,
 				E36B794F1BC2D739009CA0EA /* LaunchScreen.xib */,
 				E36B79441BC2D739009CA0EA /* Supporting Files */,
@@ -224,12 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3770F001BD448B700998A25 /* DistanceController.swift in Sources */,
 				E36B79491BC2D739009CA0EA /* ViewController.swift in Sources */,
-				E35993891BCAFAB900C6F13F /* DistanceConverter.swift in Sources */,
+				E3770F041BD4493300998A25 /* TempController.swift in Sources */,
 				E36B79471BC2D739009CA0EA /* AppDelegate.swift in Sources */,
 				E3E3682C1BCC4E79004ECDB6 /* StringEx.swift in Sources */,
-				E37749861BC2E04500E5C113 /* FirstViewController.swift in Sources */,
-				E37749881BC2E05600E5C113 /* SecondViewController.swift in Sources */,
+				E3770F021BD4490800998A25 /* MassController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

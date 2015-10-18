@@ -10,7 +10,7 @@
         <!--DistanceConverter-->
         <scene sceneID="c1Y-31-haX">
             <objects>
-                <viewController title="DistanceConverter" id="Rcr-x2-SkZ" customClass="DistanceConverter" customModule="SegmentedControl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="DistanceConverter" id="Rcr-x2-SkZ" customClass="DistanceController" customModule="SegmentedControl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YUJ-Lk-Mft"/>
                         <viewControllerLayoutGuide type="bottom" id="p9g-RC-yA1"/>
@@ -26,7 +26,7 @@
                                     <segment title="kms -&gt; miles"/>
                                 </segments>
                                 <connections>
-                                    <action selector="MysegmentControlValueChanged:" destination="Rcr-x2-SkZ" eventType="valueChanged" id="iQL-EY-lw6"/>
+                                    <action selector="MysegmentControlValueChanged:" destination="Rcr-x2-SkZ" eventType="valueChanged" id="cHJ-Jb-qkF"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance in miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJI-Cn-dE6">
@@ -53,7 +53,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="ConvertButtonPressed:" destination="Rcr-x2-SkZ" eventType="touchUpInside" id="BW3-Vb-ZRj"/>
+                                    <action selector="ConvertButtonPressed:" destination="Rcr-x2-SkZ" eventType="touchUpInside" id="U0U-Qq-gjh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzQ-ma-aJB">
@@ -62,7 +62,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ClearButtonPressed:" destination="Rcr-x2-SkZ" eventType="touchUpInside" id="tFY-35-yB7"/>
+                                    <action selector="ClearButtonPressed:" destination="Rcr-x2-SkZ" eventType="touchUpInside" id="gfD-m9-iwE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diU-Nd-ena">
@@ -185,13 +185,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Osj-9D-56h"/>
                     <connections>
-                        <outlet property="ClearButton" destination="gzQ-ma-aJB" id="Udg-4W-Ybt"/>
-                        <outlet property="ConvertButton" destination="DEJ-3f-T8h" id="MhK-Jq-Wp8"/>
-                        <outlet property="Label1" destination="fJI-Cn-dE6" id="MAI-VZ-UKM"/>
-                        <outlet property="Label2" destination="fpG-i2-LuZ" id="ljS-oF-paM"/>
-                        <outlet property="MysegmentControl" destination="ks6-S3-ro7" id="L5k-TT-vhk"/>
-                        <outlet property="ResultLabel" destination="diU-Nd-ena" id="6nt-ik-Vg5"/>
-                        <outlet property="TextLabel1" destination="T34-QS-FCG" id="ITp-3k-8HA"/>
+                        <outlet property="ClearButton" destination="gzQ-ma-aJB" id="esY-N2-qhn"/>
+                        <outlet property="ConvertButton" destination="DEJ-3f-T8h" id="0vC-fV-JDP"/>
+                        <outlet property="Label1" destination="fJI-Cn-dE6" id="lIg-f5-vdC"/>
+                        <outlet property="Label2" destination="fpG-i2-LuZ" id="Rd9-6u-HA9"/>
+                        <outlet property="MysegmentControl" destination="ks6-S3-ro7" id="xUM-4e-MD0"/>
+                        <outlet property="ResultLabel" destination="diU-Nd-ena" id="o3b-NQ-yGS"/>
+                        <outlet property="TextLabel1" destination="T34-QS-FCG" id="fJW-Yx-XPo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iS0-uq-KSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,7 +201,7 @@
         <!--Temperature-->
         <scene sceneID="iPI-mh-S3E">
             <objects>
-                <viewController id="sYb-hx-Y1B" userLabel="Temperature" customClass="SecondViewController" customModule="SegmentedControl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sYb-hx-Y1B" userLabel="Temperature" customClass="TempController" customModule="SegmentedControl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SyO-OW-mbj"/>
                         <viewControllerLayoutGuide type="bottom" id="P2X-GQ-ueB"/>
@@ -229,7 +229,7 @@
                                     <rect key="frame" x="140" y="28" width="121" height="29"/>
                                 </variation>
                                 <connections>
-                                    <action selector="segmentValueChanged:" destination="sYb-hx-Y1B" eventType="valueChanged" id="jFL-87-4py"/>
+                                    <action selector="segmentValueChanged:" destination="sYb-hx-Y1B" eventType="valueChanged" id="gVZ-xc-yLq"/>
                                 </connections>
                             </segmentedControl>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1M-Ag-dw1">
@@ -259,9 +259,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="wdy-yd-zbU" userLabel="Temperature"/>
                     <connections>
-                        <outlet property="ResultLabel" destination="BJk-lF-tbA" id="mYb-ee-zOy"/>
-                        <outlet property="mySegmentControlTemp" destination="IFD-FV-3D6" id="Eyp-bg-KBf"/>
-                        <outlet property="pickerView" destination="O1M-Ag-dw1" id="VJy-Qx-26H"/>
+                        <outlet property="ResultLabel" destination="BJk-lF-tbA" id="GqF-Pl-Hq8"/>
+                        <outlet property="mySegmentControlTemp" destination="IFD-FV-3D6" id="PEX-dS-yXM"/>
+                        <outlet property="pickerView" destination="O1M-Ag-dw1" id="nAh-tg-q7J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aR5-ao-9T1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -271,7 +271,7 @@
         <!--FirstViewController-->
         <scene sceneID="LJn-Wt-Sjc">
             <objects>
-                <viewController id="wgq-j0-dxT" userLabel="FirstViewController" customClass="FirstViewController" customModule="SegmentedControl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wgq-j0-dxT" userLabel="FirstViewController" customClass="MassController" customModule="SegmentedControl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RQD-DA-kaK"/>
                         <viewControllerLayoutGuide type="bottom" id="CZi-sq-oB2"/>
@@ -305,7 +305,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="MysegmentControlValueChanged:" destination="wgq-j0-dxT" eventType="valueChanged" id="4ba-1D-gIf"/>
+                                    <action selector="MysegmentControlValueChanged:" destination="wgq-j0-dxT" eventType="valueChanged" id="OoU-X7-hA0"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kii-EQ-lQg">
@@ -327,7 +327,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="ConvertButtonPressed:" destination="wgq-j0-dxT" eventType="touchUpInside" id="yhD-L9-tO5"/>
+                                    <action selector="ConvertButtonPressed:" destination="wgq-j0-dxT" eventType="touchUpInside" id="OZS-9S-X6x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBy-84-K7G">
@@ -459,13 +459,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Mass" id="UEy-m8-HqB" userLabel="Item1" customClass="Mass"/>
                     <connections>
-                        <outlet property="ClearButton" destination="tBy-84-K7G" id="5Gv-HY-5Sj"/>
-                        <outlet property="ConvertButton" destination="kii-EQ-lQg" id="LRx-hL-cSP"/>
-                        <outlet property="Label1" destination="FSt-CZ-0ql" id="dLs-A5-gRp"/>
-                        <outlet property="Label2" destination="NFC-3a-6G7" id="TfR-7q-Qc3"/>
-                        <outlet property="MysegmentControl" destination="IGa-wZ-wgh" id="Wgx-3O-xnm"/>
-                        <outlet property="ResultLabel" destination="XdD-IP-n4o" id="2bW-IX-Fnb"/>
-                        <outlet property="TextLabel1" destination="uR7-Nw-Q70" id="yyq-nw-qat"/>
+                        <outlet property="ClearButton" destination="tBy-84-K7G" id="P8J-fQ-NSF"/>
+                        <outlet property="ConvertButton" destination="kii-EQ-lQg" id="cXm-X8-hTJ"/>
+                        <outlet property="Label1" destination="FSt-CZ-0ql" id="Q3K-L1-dF5"/>
+                        <outlet property="Label2" destination="NFC-3a-6G7" id="HTO-H0-QeE"/>
+                        <outlet property="MysegmentControl" destination="IGa-wZ-wgh" id="0sg-xE-OPB"/>
+                        <outlet property="ResultLabel" destination="XdD-IP-n4o" id="riW-fp-OWa"/>
+                        <outlet property="TextLabel1" destination="uR7-Nw-Q70" id="u6m-Uy-byS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9z6-vd-kRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
