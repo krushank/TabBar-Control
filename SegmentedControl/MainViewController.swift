@@ -7,9 +7,12 @@
 //
 
 import UIKit
-
+/*
+    Class : MainViewController
+    Funciton : Allows the upside-down view for the app
+*/
 class MainViewController: UITabBarController {
-//
+
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //
