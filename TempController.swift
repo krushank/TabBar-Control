@@ -52,90 +52,96 @@ class TempController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         {
             ResultLabel.text = "0"
             pickerView.reloadAllComponents()
-            // pickerView.hidden = false
-            //pickerTemp.hidden = true
-            //pickerView.reloadAllComponents()
+         
         }
             
         else
         {
             ResultLabel.text = "0"
             pickerView.reloadAllComponents()
-            //pickerView.hidden = true
-            //pickerTemp.hidden = false
+           
             
         }
         
         
     }
+    
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
         
         if mySegmentControlTemp.selectedSegmentIndex == 0
         {
+            var far = " ℉"
             var item = Array[row]
             var string = (item as NSInteger)
-            var number = (toString(string))
+            var number = (toString(string)) + far
             return number
             
         }
         else
             
-        {   var item = ArrayCtoF[row]
+        {
+            var celcius = " ℃"
+            var item = ArrayCtoF[row]
             var string = (item as NSInteger)
-            var number = (toString(string))
+            var number = (toString(string)) + celcius
             return number
         }
-        
-        
-        
+
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
         
         if mySegmentControlTemp.selectedSegmentIndex == 0
         {
-            return Array.count}
+            return Array.count
+        }
+        
         else
-        { return ArrayCtoF.count }
+        {
+            return ArrayCtoF.count
+        }
         
     }
+    
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         
         if mySegmentControlTemp.selectedSegmentIndex == 0
         {
+            var celcius = "℃"
             pickerView.reloadAllComponents()
             var itemSelected = Array[row]
             var strDouble = (Double)(itemSelected as NSInteger)
             var double1 = (strDouble - 32) / 1.8
-            
-            var stringFromDouble:String = String(format:"%f", 1.00)
-            // ResultLabel.text = toString(double1)
-            ResultLabel.text = toString(double1)
+
+            ResultLabel.text = String.localizedStringWithFormat("%.1f %@", double1, celcius)
         }
             
         else
         {
-            
+            var fahrenheit = "℉"
             pickerView.reloadAllComponents()
             var itemSelected = ArrayCtoF[row]
             var strDouble = (Double)(itemSelected as NSInteger)
             var double1 = (strDouble * 1.8) + 32
-            //strDouble = itemSelected *
-            var stringFromDouble:String = String(format:"%f", 1.00)
-            // ResultLabel.text = toString(double1)
-            ResultLabel.text = toString(double1)
+           
+            ResultLabel.text = String.localizedStringWithFormat("%.1f %@", double1, fahrenheit)
         }
         
     }
     
 }
+
 
 
 

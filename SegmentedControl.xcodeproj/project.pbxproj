@@ -17,6 +17,7 @@
 		E3770F021BD4490800998A25 /* MassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3770F011BD4490800998A25 /* MassController.swift */; };
 		E3770F041BD4493300998A25 /* TempController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3770F031BD4493300998A25 /* TempController.swift */; };
 		E3E3682C1BCC4E79004ECDB6 /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E3682B1BCC4E79004ECDB6 /* StringEx.swift */; };
+		E3E70FB71BD8390500F13DF1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E70FB61BD8390500F13DF1 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E3770F011BD4490800998A25 /* MassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassController.swift; sourceTree = "<group>"; };
 		E3770F031BD4493300998A25 /* TempController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TempController.swift; path = ../TempController.swift; sourceTree = "<group>"; };
 		E3E3682B1BCC4E79004ECDB6 /* StringEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringEx.swift; path = ../StringEx.swift; sourceTree = "<group>"; };
+		E3E70FB61BD8390500F13DF1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				E36B79461BC2D739009CA0EA /* AppDelegate.swift */,
 				E36B79481BC2D739009CA0EA /* ViewController.swift */,
 				E36B794A1BC2D739009CA0EA /* Main.storyboard */,
+				E3E70FB61BD8390500F13DF1 /* MainViewController.swift */,
 				E3E3682B1BCC4E79004ECDB6 /* StringEx.swift */,
 				E3770EFF1BD448B700998A25 /* DistanceController.swift */,
 				E3770F011BD4490800998A25 /* MassController.swift */,
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E70FB71BD8390500F13DF1 /* MainViewController.swift in Sources */,
 				E3770F001BD448B700998A25 /* DistanceController.swift in Sources */,
 				E36B79491BC2D739009CA0EA /* ViewController.swift in Sources */,
 				E3770F041BD4493300998A25 /* TempController.swift in Sources */,
@@ -362,6 +366,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -373,6 +378,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

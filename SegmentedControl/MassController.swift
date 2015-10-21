@@ -48,43 +48,68 @@ class MassController: UIViewController, UITextFieldDelegate {
         {
             Label1.text = "Mass in Pounds"
             Label2.text = "Mass in Kilograms"
-            
-            
-            
+
             ResultLabel.text = "0"
-            
-            
+
         }
             
         else if MysegmentControl.selectedSegmentIndex == 1
         {
             Label1.text = "Mass in Kilograms"
             Label2.text = "Mass in Pounds"
-            
-            
+
             
             ResultLabel.text = "0"
-            
-            
+
         }
-        
-        
-        
+  
         
     }
     
     @IBAction func ConvertButtonPressed(sender: UIButton) {
         
         var numberFormatter = NSNumberFormatter()
+        
         numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
         
-        if let number = numberFormatter.numberFromString(TextLabel1.text) {
+        if let number = numberFormatter.numberFromString(TextLabel1.text)
+        {
+            if MysegmentControl.selectedSegmentIndex == 0
             
-            numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
-            
-            if let AmountString = numberFormatter.stringFromNumber(number) {
-                //outputLabel.text = "You entered \(AmountString)"
+            {
+                var numberFormatter = NSNumberFormatter()
+                numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+                
+                var strDouble = (TextLabel1.text as NSString).doubleValue
+                var double1 = strDouble / 2.20462262185
+                
+                
+                
+                let number = numberFormatter.stringFromNumber(double1)
+                ResultLabel.text = number
+
+                
             }
+               
+                
+        else if MysegmentControl.selectedSegmentIndex == 1
+            
+            {
+                
+                var numberFormatter = NSNumberFormatter()
+                numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+                
+                var strDouble = (TextLabel1.text as NSString).doubleValue
+                var double1 = strDouble * 2.20462262185
+                
+                let number = numberFormatter.stringFromNumber(double1)
+                
+                ResultLabel.text = number
+
+                
+            }
+            
+
         }
             
         else
@@ -99,26 +124,7 @@ class MassController: UIViewController, UITextFieldDelegate {
         }
         
         
-        if MysegmentControl.selectedSegmentIndex == 0
-        {
-            
-            var strDouble = (TextLabel1.text as NSString).doubleValue
-            var double1 = strDouble / 2.20
-            var strFromDouble:String = String(format:"%f", 1.00)
-            ResultLabel.text = toString(double1)
-            
-        }
-        
-        if MysegmentControl.selectedSegmentIndex == 1
-        {
-            
-            var strDouble = (TextLabel1.text as NSString).doubleValue
-            var double1 = strDouble * 2.20
-            var stringFromDouble:String = String(format:"%f", 1.00)
-            ResultLabel.text = toString(double1)
-            
-            
-        }
+      
         
     }
     
