@@ -13,24 +13,15 @@ import UIKit
 class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
    
     @IBOutlet var pickerView: UIPickerView!
-    
-   
-    
+
     @IBOutlet weak var mySegmentControlTemp: UISegmentedControl!
+    
     @IBOutlet var ResultLabel: UILabel!
 
-    
-   //let Array = [0,1,2,3,4]
    
     
- let  Array = (-129...134).map { $0 }
+     let  Array = (-129...134).map { $0 }
 
-  
-    
-   // var Array = [Int]()
-  
-    
-    
      let ArrayCtoF = (-90...57).map { $0 }
     
     
@@ -38,9 +29,7 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-       
-        
+
         pickerView.delegate = self
         pickerView.dataSource = self
         
